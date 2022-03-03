@@ -1,4 +1,5 @@
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -12,7 +13,7 @@ SECRET_KEY = 'q_6-wyh5m^%br*#(14bnm_43hi9&y^+j@#zikqa6(-$jyw*f+y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'ccn-image-classifier.herokuapp.com/']
 
 # Application definition
 
@@ -63,10 +64,9 @@ WSGI_APPLICATION = 'imageNetProj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
+        'NAME': 'd35ikai27dan87',
+        'PASSWORD': '8750d4f460a62bc25ee6f7ee386957a97dce57e80bc92ef0ccf21dc7d68927db',
+        'HOST': 'ec2-54-73-147-133.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -102,9 +102,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_ROOT = os.path.join(BASE_DIR, '/static')
+django_heroku.settings(locals())
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
