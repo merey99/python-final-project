@@ -1,27 +1,26 @@
 {% extends 'plain.html' %}
 {% block content %}
-    <div class="container jumbotron text-center bg-white">
+    <div class="jumbotron text-center">
         <form method="post" enctype="multipart/form-data" action="classifyImg">
             {% csrf_token %}
+            <h3>Upload your file here:</h3><br>
             <div class="input-group">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="inputGroupFile04" name="imagePath">
                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
                 </div>
-                <div class="input-group-append bg-primary">
-                    <button class="btn btn-outline" style="color: black" type="submit">Enter</button>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" style="color: black" type="submit">Enter</button>
                 </div>
             </div>
         </form>
     </div>
     {% if image != "" %}
-        <div class="container bg-light container-fluid h-100"><br>
-            <div class="container" style="text-align: center">
-                <p><h2>It seems like</h2><h1>{{ label }}</h1></p>
-                <div class="container card" style="width: 18rem;">
+        <div class="container bg-grey container-fluid h-100"><br>
+            <p><h2>The image more likely:</h2><h1>{{ label }}</h1></p>
+                <div class="card" style="width: 18rem;">
                     <img src="{{ image }}" class="card-img-top" alt="{{ label }}">
                 </div>
-            </div>
             <br><br>
         </div>
     {% endif %}
