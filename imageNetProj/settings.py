@@ -64,10 +64,10 @@ WSGI_APPLICATION = 'imageNetProj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
+        'NAME': 'd35ikai27dan87',
+        'USER': 'asigybndeeltjy',
+        'PASSWORD': '8750d4f460a62bc25ee6f7ee386957a97dce57e80bc92ef0ccf21dc7d68927db',
+        'HOST': 'ec2-54-73-147-133.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
